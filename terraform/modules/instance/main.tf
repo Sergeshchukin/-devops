@@ -12,6 +12,7 @@ data "yandex_compute_image" "my_image" {
 }
 
 resource "yandex_compute_instance" "vm" {
+  name = ${var.my-name}
   zone = var.vpc_subnet_zone
 
   resources {

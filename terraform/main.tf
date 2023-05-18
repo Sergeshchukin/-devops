@@ -62,7 +62,7 @@ resource "yandex_lb_network_load_balancer" "my_lb" {
 }
 
 module "instance_1" {
-  name                  = "k8s-master"
+  my-name               = "k8s-master"
   source                = "./modules/instance"
   instance_family_image = "ubuntu-2204-lts"
   vpc_subnet_id         = yandex_vpc_subnet.subnet1.id
@@ -70,7 +70,7 @@ module "instance_1" {
 }
 
 module "instance_2" {
-  name                  = "k8s-app"
+  my-name               = "k8s-app"
   source                = "./modules/instance"
   instance_family_image = "ubuntu-2204-lts"
   vpc_subnet_id         = yandex_vpc_subnet.subnet1.id
@@ -78,7 +78,7 @@ module "instance_2" {
 }
 
 module "instance_3" {
-  name                  = "srv"
+  my-name               = "srv"
   source                = "./modules/instance"
   instance_family_image = "ubuntu-2204-lts"
   vpc_subnet_id         = yandex_vpc_subnet.subnet1.id

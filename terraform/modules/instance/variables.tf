@@ -1,6 +1,7 @@
 variable "instance_family_image" {
   description = "Instance image"
   type        = string
+  my-name     = string
 }
 
 variable "vpc_subnet_id" {
