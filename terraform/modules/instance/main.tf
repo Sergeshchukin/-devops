@@ -12,7 +12,7 @@ data "yandex_compute_image" "my_image" {
 }
 
 resource "yandex_compute_instance" "vm" {
-  name = ${var.my-name}
+  name = "${var.my-name}"
   zone = var.vpc_subnet_zone
 
   resources {
@@ -27,3 +27,12 @@ resource "yandex_compute_instance" "vm" {
     }
   }
 
+  network_interface {
+    subnet_id = var.vpc_subnet_id
+    nat       = true
+  }
+
+  metadata = {
+    ssh-keys = "ubuntu:${file("~/.ssh/id_rsa.pub")}"
+  }
+}
