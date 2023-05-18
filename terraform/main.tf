@@ -37,6 +37,11 @@ resource "yandex_lb_target_group" "my_tg" {
     subnet_id = yandex_vpc_subnet.subnet1.id
     address   = module.instance_2.internal_ip_address_vm
   }
+
+  target {
+    subnet_id = yandex_vpc_subnet.subnet1.id
+    address   = module.instance_3.internal_ip_address_vm
+  }
 }
 
 resource "yandex_lb_network_load_balancer" "my_lb" {
@@ -60,7 +65,6 @@ resource "yandex_lb_network_load_balancer" "my_lb" {
     }
   }
 }
-
 module "instance_1" {
   my-name               = "k8s-master"
   source                = "./modules/instance"
