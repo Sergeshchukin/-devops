@@ -49,7 +49,8 @@
   
   - name: Install docker-compose
     ignore_errors: true
-    except: sudo docker-compose_install.sh
+    expect: 
+      command: sudo docker-compose_install.sh
 
   - name: Download monitoring containers
     ignore_errors: true
