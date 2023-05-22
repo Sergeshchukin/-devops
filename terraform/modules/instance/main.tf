@@ -16,8 +16,8 @@ resource "yandex_compute_instance" "vm" {
   zone = var.vpc_subnet_zone
 
   resources {
-    cores  = 2
-    memory = 4
+    cores  = 4
+    memory = 8
   }
 
   boot_disk {

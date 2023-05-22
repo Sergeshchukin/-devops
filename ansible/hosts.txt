@@ -1,0 +1,6 @@
+[monitoring]
+monitoring ansible_host=[ip.host.addr]
+
+[kubernetes]
+kubernetes ansible_host=[ip.host.addr]
+kubernetes ansible_host=[ip.host.addr]
